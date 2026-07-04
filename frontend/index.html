@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Sales Analyst — Enterprise Platform</title>
+    <script>
+        // Instant routing check before rendering
+        const token = localStorage.getItem('jwt_token');
+        if (token) {
+            window.location.replace('dashboard.html');
+        } else {
+            window.location.replace('login.html');
+        }
+    </script>
+</head>
+<body style="background: #0F172A; color: #F8FAFC; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh;">
+    <div style="text-align: center;">
+        <p>⚡ Loading AI Sales Analyst Enterprise Suite...</p>
+    </div>
+</body>
+</html>

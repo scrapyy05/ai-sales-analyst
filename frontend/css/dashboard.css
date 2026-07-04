@@ -1,0 +1,232 @@
+/* ==========================================================================
+   AI Sales Analyst — Dashboard & Ask AI Page Styles
+   ========================================================================== */
+
+/* Statistic Cards Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.stat-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all var(--transition-base);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-hover);
+}
+
+.stat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-3);
+}
+
+.stat-title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-secondary);
+}
+
+.stat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+}
+
+.stat-icon-blue { background-color: rgba(37, 99, 235, 0.1); color: #2563EB; }
+.stat-icon-green { background-color: rgba(34, 197, 94, 0.1); color: #22C55E; }
+.stat-icon-amber { background-color: rgba(245, 158, 11, 0.1); color: #F59E0B; }
+.stat-icon-purple { background-color: rgba(168, 85, 247, 0.1); color: #A855F7; }
+
+.stat-value {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-bold);
+    color: var(--text-main);
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+}
+
+.stat-footer {
+    margin-top: var(--space-2);
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+}
+
+/* Charts Grid */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+}
+
+.chart-container {
+    position: relative;
+    height: 320px;
+    width: 100%;
+}
+
+/* ================= ASK AI HERO FEATURE ================= */
+.ask-hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-8) 0;
+}
+
+.ask-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.ask-title {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-bold);
+    color: var(--text-main);
+    margin-bottom: var(--space-2);
+    letter-spacing: -0.03em;
+}
+
+.ask-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+}
+
+.ask-prompt-box {
+    background-color: var(--bg-card);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4);
+    box-shadow: var(--shadow-lg);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    margin-bottom: var(--space-6);
+}
+
+.ask-prompt-box:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px var(--color-primary-light);
+}
+
+.ask-textarea {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: var(--font-size-lg);
+    color: var(--text-main);
+    resize: none;
+    min-height: 100px;
+    outline: none;
+}
+
+.ask-textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.ask-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border-color);
+}
+
+.ask-suggestions {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-8);
+}
+
+.suggestion-chip {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.suggestion-chip:hover {
+    background-color: var(--color-primary-light);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+/* AI Response Card */
+.ai-response-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-md);
+    margin-top: var(--space-8);
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ai-response-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ai-section-title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-bold);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-2);
+}
+
+.ai-section-content {
+    font-size: var(--font-size-base);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+}
+
+/* CSV Upload Area */
+.upload-dropzone {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: var(--space-12) var(--space-6);
+    text-align: center;
+    background-color: var(--bg-card);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.upload-dropzone:hover, .upload-dropzone.dragover {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-light);
+}
+
+.upload-icon {
+    font-size: var(--font-size-4xl);
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+}

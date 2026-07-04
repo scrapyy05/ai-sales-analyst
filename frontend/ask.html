@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask AI — Natural Language Query Engine</title>
+    
+    <!-- Google Fonts: Outfit, Plus Jakarta Sans, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Design System -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ================= LEFT SIDEBAR ================= -->
+        <aside class="sidebar" id="sidebar">
+            <div>
+                <div class="sidebar-header">
+                    <div class="sidebar-brand-icon">⚡</div>
+                    <span class="sidebar-brand-text">SalesAnalyst</span>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="dashboard.html" class="nav-item">
+                        <span class="nav-icon">📊</span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="ask.html" class="nav-item active">
+                        <span class="nav-icon">🤖</span>
+                        <span>Ask AI</span>
+                        <span class="badge badge-primary" style="margin-left: auto; font-size: 10px;">PRO</span>
+                    </a>
+                    <a href="analytics.html" class="nav-item">
+                        <span class="nav-icon">📈</span>
+                        <span>Analytics</span>
+                    </a>
+                    <a href="upload.html" class="nav-item">
+                        <span class="nav-icon">📁</span>
+                        <span>Upload CSV</span>
+                    </a>
+                    <a href="products.html" class="nav-item">
+                        <span class="nav-icon">📦</span>
+                        <span>Products</span>
+                    </a>
+                    <a href="customers.html" class="nav-item">
+                        <span class="nav-icon">👥</span>
+                        <span>Customers</span>
+                    </a>
+                    <a href="sales.html" class="nav-item">
+                        <span class="nav-icon">💰</span>
+                        <span>Sales</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="logout-btn">
+                    <span class="nav-icon">🚪</span>
+                    <span>Sign Out</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- ================= TOP NAVBAR ================= -->
+        <header class="navbar">
+            <div class="navbar-left">
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+                <h1 class="page-title-display">Natural Language Query Engine</h1>
+            </div>
+
+            <div class="search-box" onclick="document.getElementById('ask-textarea').focus()">
+                <span>🤖</span>
+                <span>Gemini 1.5 Pro Text-to-SQL Active</span>
+                <span class="badge badge-success" style="margin-left: auto; font-size: 10px;">ONLINE</span>
+            </div>
+
+            <div class="navbar-right">
+                <button class="nav-action-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+                <button class="nav-action-btn" title="Notifications">🔔</button>
+                <div class="user-profile" onclick="window.location.href='customers.html'">
+                    <div class="avatar">E</div>
+                    <div class="user-info">
+                        <span class="user-name">Executive</span>
+                        <span class="user-role">Enterprise Admin</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ================= MAIN CONTENT AREA ================= -->
+        <main class="main-content">
+            <div class="page-container animate-fade-in">
+                <!-- Ask AI Hero Interface -->
+                <div class="ask-hero-container">
+                    <div class="ask-header">
+                        <div style="width: 56px; height: 56px; border-radius: 16px; background: rgba(37, 99, 235, 0.1); color: #2563EB; display: flex; align-items: center; justify-content: center; font-size: 28px; margin: 0 auto 16px; box-shadow: var(--shadow-sm);">
+                            ✨
+                        </div>
+                        <h1 class="ask-title">Interrogate Your Sales Data</h1>
+                        <p class="ask-subtitle">Powered by Google Gemini 1.5 Pro & Redis Semantic Caching</p>
+                    </div>
+
+                    <!-- Prompt Box -->
+                    <form id="ask-form">
+                        <div class="ask-prompt-box">
+                            <textarea id="ask-textarea" class="ask-textarea" placeholder="Ask anything about your sales... (e.g., 'What are our top 5 products by revenue?' or 'Show total revenue by category')" rows="3" autofocus></textarea>
+                            <div class="ask-actions">
+                                <span class="text-muted" style="font-size: 12px;">💡 Tip: Press Enter or click Analyze to execute SQL query</span>
+                                <button type="submit" class="btn btn-primary btn-lg" style="padding: 10px 28px; font-weight: 600;">
+                                    Analyze Data ✨
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Suggestion Chips -->
+                    <div style="text-align: center; margin-bottom: 12px; font-size: 13px; font-weight: 600; color: var(--text-secondary);">
+                        ⚡ Try asking these executive questions:
+                    </div>
+                    <div class="ask-suggestions" style="justify-content: center;">
+                        <button type="button" class="suggestion-chip" data-query="What is our total revenue and total sales count?">
+                            📊 Total Revenue & Sales
+                        </button>
+                        <button type="button" class="suggestion-chip" data-query="Show me the top 5 products by revenue generated">
+                            👑 Top 5 Products
+                        </button>
+                        <button type="button" class="suggestion-chip" data-query="List all product categories and their revenue distribution">
+                            📈 Revenue by Category
+                        </button>
+                        <button type="button" class="suggestion-chip" data-query="Which customers generated the highest transaction volume?">
+                            🤝 Top Customers
+                        </button>
+                    </div>
+
+                    <!-- AI Response Area -->
+                    <div id="ai-response-container">
+                        <!-- Populated dynamically by ask.js -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <span>© 2026 AI Sales Analyst — Enterprise SaaS Suite. Built for placement excellence.</span>
+                <span class="text-muted">Gemini 1.5 Pro + Redis Query Cache</span>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Centralized JS Layer -->
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ask.js"></script>
+</body>
+</html>

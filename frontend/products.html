@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Catalog — AI Sales Analyst</title>
+    
+    <!-- Google Fonts: Outfit, Plus Jakarta Sans, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Design System -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ================= LEFT SIDEBAR ================= -->
+        <aside class="sidebar" id="sidebar">
+            <div>
+                <div class="sidebar-header">
+                    <div class="sidebar-brand-icon">⚡</div>
+                    <span class="sidebar-brand-text">SalesAnalyst</span>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="dashboard.html" class="nav-item">
+                        <span class="nav-icon">📊</span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="ask.html" class="nav-item">
+                        <span class="nav-icon">🤖</span>
+                        <span>Ask AI</span>
+                        <span class="badge badge-primary" style="margin-left: auto; font-size: 10px;">PRO</span>
+                    </a>
+                    <a href="analytics.html" class="nav-item">
+                        <span class="nav-icon">📈</span>
+                        <span>Analytics</span>
+                    </a>
+                    <a href="upload.html" class="nav-item">
+                        <span class="nav-icon">📁</span>
+                        <span>Upload CSV</span>
+                    </a>
+                    <a href="products.html" class="nav-item active">
+                        <span class="nav-icon">📦</span>
+                        <span>Products</span>
+                    </a>
+                    <a href="customers.html" class="nav-item">
+                        <span class="nav-icon">👥</span>
+                        <span>Customers</span>
+                    </a>
+                    <a href="sales.html" class="nav-item">
+                        <span class="nav-icon">💰</span>
+                        <span>Sales</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="logout-btn">
+                    <span class="nav-icon">🚪</span>
+                    <span>Sign Out</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- ================= TOP NAVBAR ================= -->
+        <header class="navbar">
+            <div class="navbar-left">
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+                <h1 class="page-title-display">Product Catalog Management</h1>
+            </div>
+
+            <div class="search-box" onclick="document.getElementById('product-search').focus()">
+                <span>🔍</span>
+                <span>Search SKUs & Categories...</span>
+                <span class="search-kbd">⌘F</span>
+            </div>
+
+            <div class="navbar-right">
+                <button class="nav-action-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+                <button class="nav-action-btn" title="Notifications">🔔</button>
+                <div class="user-profile" onclick="window.location.href='customers.html'">
+                    <div class="avatar">E</div>
+                    <div class="user-info">
+                        <span class="user-name">Executive</span>
+                        <span class="user-role">Enterprise Admin</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ================= MAIN CONTENT AREA ================= -->
+        <main class="main-content">
+            <div class="page-container animate-fade-in">
+                <div class="breadcrumb">
+                    <span>Platform</span>
+                    <span>/</span>
+                    <span class="breadcrumb-item active">Products</span>
+                </div>
+
+                <!-- Search & Action Bar -->
+                <div class="filter-bar">
+                    <div class="filter-left">
+                        <input type="text" id="product-search" class="form-input" placeholder="🔍 Search products by name or category..." style="max-width: 350px;">
+                    </div>
+                    <div class="filter-right">
+                        <button type="button" id="add-product-btn" class="btn btn-primary">
+                            <span>+ Add New Product</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Products Table Card -->
+                <div class="card">
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Product Name</th>
+                                    <th>Category</th>
+                                    <th>Unit Price</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="products-tbody">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <span id="pagination-info" class="text-muted" style="font-size: 13px;">Showing 0 items</span>
+                        <div class="pagination-controls" id="pagination-controls"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <span>© 2026 AI Sales Analyst — Enterprise SaaS Suite. Built for placement excellence.</span>
+                <span class="text-muted">PostgreSQL Products Catalog</span>
+            </footer>
+        </main>
+    </div>
+
+    <!-- ================= ADD / EDIT PRODUCT MODAL ================= -->
+    <div id="product-modal" class="modal-backdrop">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="card-title" id="modal-product-title">Add New Product</h3>
+                <button class="toast-close close-product-modal">×</button>
+            </div>
+            <form id="product-form">
+                <div class="modal-body">
+                    <input type="hidden" id="product-id">
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="product-name">Product Name *</label>
+                        <input type="text" id="product-name" class="form-input" placeholder="e.g., Enterprise Cloud License" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="product-category">Category</label>
+                        <input type="text" id="product-category" class="form-input" placeholder="e.g., Software, Hardware, Services">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="product-price">Unit Price ($) *</label>
+                        <input type="number" id="product-price" class="form-input" placeholder="0.00" step="0.01" min="0" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary close-product-modal">Cancel</button>
+                    <button type="submit" id="save-product-btn" class="btn btn-primary">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Centralized JS Layer -->
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

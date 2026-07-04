@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Data Ingest — AI Sales Analyst</title>
+    
+    <!-- Google Fonts: Outfit, Plus Jakarta Sans, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Design System -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ================= LEFT SIDEBAR ================= -->
+        <aside class="sidebar" id="sidebar">
+            <div>
+                <div class="sidebar-header">
+                    <div class="sidebar-brand-icon">⚡</div>
+                    <span class="sidebar-brand-text">SalesAnalyst</span>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="dashboard.html" class="nav-item">
+                        <span class="nav-icon">📊</span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="ask.html" class="nav-item">
+                        <span class="nav-icon">🤖</span>
+                        <span>Ask AI</span>
+                        <span class="badge badge-primary" style="margin-left: auto; font-size: 10px;">PRO</span>
+                    </a>
+                    <a href="analytics.html" class="nav-item">
+                        <span class="nav-icon">📈</span>
+                        <span>Analytics</span>
+                    </a>
+                    <a href="upload.html" class="nav-item active">
+                        <span class="nav-icon">📁</span>
+                        <span>Upload CSV</span>
+                    </a>
+                    <a href="products.html" class="nav-item">
+                        <span class="nav-icon">📦</span>
+                        <span>Products</span>
+                    </a>
+                    <a href="customers.html" class="nav-item">
+                        <span class="nav-icon">👥</span>
+                        <span>Customers</span>
+                    </a>
+                    <a href="sales.html" class="nav-item">
+                        <span class="nav-icon">💰</span>
+                        <span>Sales</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="logout-btn">
+                    <span class="nav-icon">🚪</span>
+                    <span>Sign Out</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- ================= TOP NAVBAR ================= -->
+        <header class="navbar">
+            <div class="navbar-left">
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+                <h1 class="page-title-display">ETL Data Ingestion Pipeline</h1>
+            </div>
+
+            <div class="search-box" onclick="UI.showToast('📁 Ready for high-performance CSV batch parsing.', 'success')">
+                <span>📁</span>
+                <span>Automated Redis Cache Invalidation</span>
+                <span class="badge badge-primary" style="margin-left: auto; font-size: 10px;">ETL</span>
+            </div>
+
+            <div class="navbar-right">
+                <button class="nav-action-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+                <button class="nav-action-btn" title="Notifications">🔔</button>
+                <div class="user-profile" onclick="window.location.href='customers.html'">
+                    <div class="avatar">E</div>
+                    <div class="user-info">
+                        <span class="user-name">Executive</span>
+                        <span class="user-role">Enterprise Admin</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ================= MAIN CONTENT AREA ================= -->
+        <main class="main-content">
+            <div class="page-container animate-fade-in">
+                <div class="breadcrumb">
+                    <span>Platform</span>
+                    <span>/</span>
+                    <span class="breadcrumb-item active">Dataset Ingestion</span>
+                </div>
+
+                <div style="max-width: 750px; margin: 0 auto; padding: 24px 0;">
+                    <div style="text-align: center; margin-bottom: 32px;">
+                        <h2 style="font-size: 28px; margin-bottom: 8px;">Upload Sales Dataset</h2>
+                        <p class="text-secondary">Drag and drop your enterprise .csv dataset to trigger automated ETL parsing and cache invalidation.</p>
+                    </div>
+
+                    <!-- Drag and Drop Zone -->
+                    <div id="upload-dropzone" class="upload-dropzone">
+                        <div class="upload-icon">📁</div>
+                        <h3 style="font-size: 18px; margin-bottom: 8px;">Drag & Drop your CSV file here</h3>
+                        <p class="text-muted" style="font-size: 14px; margin-bottom: 20px;">Supports standard UTF-8 formatted CSV files up to 50MB</p>
+                        <button type="button" class="btn btn-secondary">Browse Filesystem</button>
+                        <input type="file" id="csv-file-input" accept=".csv" class="hidden">
+                    </div>
+
+                    <!-- File Preview & Upload Confirmation Card -->
+                    <div id="file-preview-card" class="card hidden animate-slide-up">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--color-primary-light); color: var(--color-primary); display: flex; align-items: center; justify-content: center; font-size: 24px;">
+                                    📊
+                                </div>
+                                <div>
+                                    <h4 id="file-name-display" style="font-size: 16px; margin-bottom: 2px;">dataset.csv</h4>
+                                    <span id="file-size-display" class="text-muted" style="font-size: 13px;">0 KB</span>
+                                </div>
+                            </div>
+                            <button type="button" id="remove-file-btn" class="btn btn-secondary btn-sm" style="color: var(--color-danger);">Remove</button>
+                        </div>
+
+                        <div style="background: var(--bg-surface); padding: 16px; border-radius: 8px; font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+                            ⚡ <strong>ETL Pipeline Notice:</strong> Ingesting this dataset will automatically parse records into PostgreSQL tables (`products`, `customers`, `sales`) and clear the Redis Query Cache to ensure 100% data freshness for Gemini 1.5 Pro.
+                        </div>
+
+                        <div style="margin: 0 0 20px 0; display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-secondary);">
+                            <input type="checkbox" id="overwrite-checkbox" style="width: 16px; height: 16px; cursor: pointer;">
+                            <label for="overwrite-checkbox" style="cursor: pointer;">Replace existing sales records (Overwrite Mode)</label>
+                        </div>
+
+                        <div style="display: flex; gap: 12px;">
+                            <button type="button" id="start-upload-btn" class="btn btn-primary" style="flex: 1;">
+                                ⚡ Start ETL Ingestion
+                            </button>
+                            <button type="button" id="clear-db-btn" class="btn btn-secondary" style="color: var(--color-danger); border-color: var(--color-danger);">
+                                🗑️ Clear DB
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Status Alert Box -->
+                    <div id="upload-status-box" class="hidden"></div>
+                </div>
+
+                <!-- Upload History Table -->
+                <div class="card mt-8">
+                    <div class="card-header">
+                        <h3 class="card-title">Session Upload History</h3>
+                        <span class="badge badge-secondary">ETL Logs</span>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>File Name</th>
+                                    <th>File Size</th>
+                                    <th>Status</th>
+                                    <th>Records Inserted</th>
+                                    <th>Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody id="upload-history-tbody">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <span>© 2026 AI Sales Analyst — Enterprise SaaS Suite. Built for placement excellence.</span>
+                <span class="text-muted">PostgreSQL ETL Ingestion Engine</span>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Centralized JS Layer -->
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/upload.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Dashboard — AI Sales Analyst</title>
+    
+    <!-- Google Fonts: Outfit, Plus Jakarta Sans, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS Design System -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/tables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <!-- ================= LEFT SIDEBAR ================= -->
+        <aside class="sidebar" id="sidebar">
+            <div>
+                <div class="sidebar-header">
+                    <div class="sidebar-brand-icon">⚡</div>
+                    <span class="sidebar-brand-text">SalesAnalyst</span>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="dashboard.html" class="nav-item active">
+                        <span class="nav-icon">📊</span>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="ask.html" class="nav-item">
+                        <span class="nav-icon">🤖</span>
+                        <span>Ask AI</span>
+                        <span class="badge badge-primary" style="margin-left: auto; font-size: 10px;">PRO</span>
+                    </a>
+                    <a href="analytics.html" class="nav-item">
+                        <span class="nav-icon">📈</span>
+                        <span>Analytics</span>
+                    </a>
+                    <a href="upload.html" class="nav-item">
+                        <span class="nav-icon">📁</span>
+                        <span>Upload CSV</span>
+                    </a>
+                    <a href="products.html" class="nav-item">
+                        <span class="nav-icon">📦</span>
+                        <span>Products</span>
+                    </a>
+                    <a href="customers.html" class="nav-item">
+                        <span class="nav-icon">👥</span>
+                        <span>Customers</span>
+                    </a>
+                    <a href="sales.html" class="nav-item">
+                        <span class="nav-icon">💰</span>
+                        <span>Sales</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="logout-btn">
+                    <span class="nav-icon">🚪</span>
+                    <span>Sign Out</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- ================= TOP NAVBAR ================= -->
+        <header class="navbar">
+            <div class="navbar-left">
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+                <h1 class="page-title-display">Executive Dashboard</h1>
+            </div>
+
+            <!-- Search UI -->
+            <div class="search-box" onclick="UI.showToast('🔍 Use Ask AI tab for natural language queries!', 'warning')">
+                <span>🔍</span>
+                <span>Search metrics, records, reports...</span>
+                <span class="search-kbd">⌘K</span>
+            </div>
+
+            <div class="navbar-right">
+                <!-- Theme Toggle -->
+                <button class="nav-action-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+                
+                <!-- Notification Icon UI -->
+                <button class="nav-action-btn" title="Notifications" onclick="UI.showToast('🔔 No new system notifications.', 'success')">🔔</button>
+
+                <!-- User Profile Dropdown -->
+                <div class="user-profile" onclick="window.location.href='customers.html'">
+                    <div class="avatar">E</div>
+                    <div class="user-info">
+                        <span class="user-name">Executive</span>
+                        <span class="user-role">Enterprise Admin</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ================= MAIN CONTENT AREA ================= -->
+        <main class="main-content">
+            <div class="page-container animate-fade-in">
+                <!-- Breadcrumb & Clear DB -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                    <div class="breadcrumb" style="margin-bottom: 0;">
+                        <span>Platform</span>
+                        <span>/</span>
+                        <span class="breadcrumb-item active">Overview</span>
+                    </div>
+                    <button id="clear-db-btn" class="btn btn-secondary btn-sm" style="color: var(--color-danger); border-color: var(--color-danger);">
+                        🗑️ Clear All Database Records
+                    </button>
+                </div>
+
+                <!-- Statistic Cards Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Total Revenue</span>
+                            <div class="stat-icon stat-icon-blue">💵</div>
+                        </div>
+                        <div class="stat-value" id="stat-revenue">$0.00</div>
+                        <div class="stat-footer"><span>📈 +14.2% from last month</span></div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Total Sales</span>
+                            <div class="stat-icon stat-icon-green">🛒</div>
+                        </div>
+                        <div class="stat-value" id="stat-sales">0</div>
+                        <div class="stat-footer"><span>⚡ Verified transaction count</span></div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Active Customers</span>
+                            <div class="stat-icon stat-icon-amber">👥</div>
+                        </div>
+                        <div class="stat-value" id="stat-customers">0</div>
+                        <div class="stat-footer"><span>🤝 Enterprise & individual accounts</span></div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <span class="stat-title">Product Catalog</span>
+                            <div class="stat-icon stat-icon-purple">📦</div>
+                        </div>
+                        <div class="stat-value" id="stat-products">0</div>
+                        <div class="stat-footer"><span>🏷️ Active SKUs tracked</span></div>
+                    </div>
+                </div>
+
+                <!-- Charts Grid -->
+                <div class="charts-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Top Performing Products</h3>
+                            <span class="badge badge-primary">Revenue Leaderboard</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="dashboard-bar-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Category Share</h3>
+                            <span class="badge badge-success">Distribution</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="dashboard-pie-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Table -->
+                <div class="card mt-6">
+                    <div class="card-header">
+                        <h3 class="card-title">Recent Sales Activity</h3>
+                        <a href="sales.html" class="btn btn-secondary btn-sm">View All Sales →</a>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Transaction Description</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-activity-tbody">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <span>© 2026 AI Sales Analyst — Enterprise SaaS Suite. Built for placement excellence.</span>
+                <span class="text-muted">v2.0.0 Production Release</span>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Centralized JS Layer -->
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

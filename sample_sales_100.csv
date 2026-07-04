@@ -1,0 +1,102 @@
+customer_name,customer_email,product_name,price,quantity,category
+Sarah Jenkins,s.jenkins@acme-global.com,MacBook Pro M3 Max 16-inch,3499.00,8,Hardware & Devices
+Alex Rivera,arivera@fintech-vault.io,AWS EC2 Reserved Instances,45000.00,1,Cloud Infrastructure
+Dr. Priya Sharma,psharma@biohealth-labs.org,Figma Enterprise Seats,45.00,120,SaaS & Software
+Kenji Sato,ksato@tokyo-logistics.jp,Gemini API Enterprise Tier,15000.00,2,AI & Machine Learning
+Amara Okafor,amara@cloudscale-africa.co,CrowdStrike Falcon Endpoint,85.00,250,Cybersecurity
+Liam Thorne,lthorne@nordic-energy.se,Data Strategy Workshop,12000.00,1,Consulting & Services
+Elena Rostova,erostova@cyber-shield.net,Herman Miller Aeron Chair,1399.00,15,Office & Remote Work
+David Kim,dkim@hyperion-ai.com,NVIDIA H100 GPU Cluster Rent,85000.00,1,AI & Machine Learning
+Rachel Green,rgreen@omniretail.us,GitHub Enterprise License,21.00,500,SaaS & Software
+Marcus Vance,mvance@titan-aerospace.com,Dell PowerEdge R750 Server,14500.00,3,Hardware & Devices
+Sophia Chen,sophia.chen@techcorp.io,GCP BigQuery Compute Pack,25000.00,1,Cloud Infrastructure
+Chloe Bennett,chloe@quantumdata.io,Okta SSO Enterprise Suite,12.00,800,Cybersecurity
+Aarav Patel,aarav.p@nextgenlabs.com,Cloud Migration 3-Month Project,65000.00,1,Consulting & Services
+William Taylor,wtaylor@enterprisecloud.com,Apple Studio Display 27-inch,1599.00,10,Office & Remote Work
+Olivia Brooks,olivia.b@cyberguard.net,OpenAI Custom Model Finetuning,30000.00,1,AI & Machine Learning
+James Wilson,jwilson@logisticsplus.com,Salesforce CRM Unlimited Tier,330.00,75,SaaS & Software
+Emma Davis,emma.d@healthcareai.org,Cisco Catalyst 9300 Switch,6800.00,4,Hardware & Devices
+Benjamin Wright,bwright@fintechpulse.io,Azure Kubernetes Cluster Pro,18000.00,2,Cloud Infrastructure
+Mia Anderson,mia.a@retailconnect.com,Cloudflare Magic Transit,14000.00,1,Cybersecurity
+Alexander White,awhite@mediahub.net,Logitech Rally Video Conferencing Kit,2999.00,6,Office & Remote Work
+Zoe Martinez,zoe.m@startupscale.com,Custom Analytics Dashboard Dev,24000.00,1,Consulting & Services
+Liam O'Connor,liam.oc@bluehorizon.co,Vector Database Cloud Dedicated,9500.00,3,AI & Machine Learning
+Carlos Mendez,cmendez@latam-pay.mx,Notion Workspace Enterprise,18.00,350,SaaS & Software
+Fatima Al-Sayed,fal-sayed@gulf-energy.ae,Synology RackStation NAS 64TB,8200.00,2,Hardware & Devices
+Oliver Queen,oqueen@star-city.org,Snowflake Warehouse Credits,35000.00,1,Cloud Infrastructure
+Hannah Abbott,habbott@edtech-global.uk,SOC 2 Compliance Audit Package,28000.00,1,Cybersecurity
+Lucas Silva,lsilva@agritech-brazil.com,Autonomous Smart Desk Pro,899.00,20,Office & Remote Work
+Nina Patel,npatel@med-device.in,DevOps Pipeline Architecture,32000.00,1,Consulting & Services
+Thomas Anderson,tanderson@matrix-systems.com,AI Speech Recognition Engine,16000.00,2,AI & Machine Learning
+Victoria Sterling,vsterling@sterling-cap.co,Linear Enterprise License,15.00,400,SaaS & Software
+Sarah Jenkins,s.jenkins@acme-global.com,ThinkPad X1 Carbon Gen 11,2199.00,12,Hardware & Devices
+Alex Rivera,arivera@fintech-vault.io,Cloudflare Enterprise CDN,22000.00,1,Cloud Infrastructure
+Dr. Priya Sharma,psharma@biohealth-labs.org,Penetration Testing Package,19500.00,1,Cybersecurity
+Kenji Sato,ksato@tokyo-logistics.jp,24/7 Dedicated SLA Support,36000.00,1,Consulting & Services
+Amara Okafor,amara@cloudscale-africa.co,Shure MV7 Podcast Microphone,249.00,25,Office & Remote Work
+Liam Thorne,lthorne@nordic-energy.se,Datadog Observability Pack,18500.00,1,SaaS & Software
+David Kim,dkim@hyperion-ai.com,MacBook Pro M3 Max 16-inch,3499.00,5,Hardware & Devices
+Rachel Green,rgreen@omniretail.us,AWS EC2 Reserved Instances,45000.00,1,Cloud Infrastructure
+Marcus Vance,mvance@titan-aerospace.com,Gemini API Enterprise Tier,15000.00,3,AI & Machine Learning
+Sophia Chen,sophia.chen@techcorp.io,CrowdStrike Falcon Endpoint,85.00,300,Cybersecurity
+Chloe Bennett,chloe@quantumdata.io,Data Strategy Workshop,12000.00,1,Consulting & Services
+Aarav Patel,aarav.p@nextgenlabs.com,Herman Miller Aeron Chair,1399.00,8,Office & Remote Work
+William Taylor,wtaylor@enterprisecloud.com,Figma Enterprise Seats,45.00,180,SaaS & Software
+Olivia Brooks,olivia.b@cyberguard.net,NVIDIA H100 GPU Cluster Rent,85000.00,1,AI & Machine Learning
+James Wilson,jwilson@logisticsplus.com,Dell PowerEdge R750 Server,14500.00,2,Hardware & Devices
+Emma Davis,emma.d@healthcareai.org,GCP BigQuery Compute Pack,25000.00,2,Cloud Infrastructure
+Benjamin Wright,bwright@fintechpulse.io,Okta SSO Enterprise Suite,12.00,600,Cybersecurity
+Mia Anderson,mia.a@retailconnect.com,Cloud Migration 3-Month Project,65000.00,1,Consulting & Services
+Alexander White,awhite@mediahub.net,Apple Studio Display 27-inch,1599.00,6,Office & Remote Work
+Zoe Martinez,zoe.m@startupscale.com,GitHub Enterprise License,21.00,300,SaaS & Software
+Carlos Mendez,cmendez@latam-pay.mx,OpenAI Custom Model Finetuning,30000.00,1,AI & Machine Learning
+Fatima Al-Sayed,fal-sayed@gulf-energy.ae,Cisco Catalyst 9300 Switch,6800.00,3,Hardware & Devices
+Oliver Queen,oqueen@star-city.org,Azure Kubernetes Cluster Pro,18000.00,1,Cloud Infrastructure
+Hannah Abbott,habbott@edtech-global.uk,Cloudflare Magic Transit,14000.00,2,Cybersecurity
+Lucas Silva,lsilva@agritech-brazil.com,Custom Analytics Dashboard Dev,24000.00,1,Consulting & Services
+Nina Patel,npatel@med-device.in,Logitech Rally Video Conferencing Kit,2999.00,4,Office & Remote Work
+Thomas Anderson,tanderson@matrix-systems.com,Salesforce CRM Unlimited Tier,330.00,50,SaaS & Software
+Victoria Sterling,vsterling@sterling-cap.co,Vector Database Cloud Dedicated,9500.00,2,AI & Machine Learning
+Sarah Jenkins,s.jenkins@acme-global.com,Synology RackStation NAS 64TB,8200.00,1,Hardware & Devices
+Alex Rivera,arivera@fintech-vault.io,Snowflake Warehouse Credits,35000.00,2,Cloud Infrastructure
+Dr. Priya Sharma,psharma@biohealth-labs.org,SOC 2 Compliance Audit Package,28000.00,1,Cybersecurity
+Kenji Sato,ksato@tokyo-logistics.jp,DevOps Pipeline Architecture,32000.00,1,Consulting & Services
+Amara Okafor,amara@cloudscale-africa.co,Autonomous Smart Desk Pro,899.00,15,Office & Remote Work
+Liam Thorne,lthorne@nordic-energy.se,Notion Workspace Enterprise,18.00,500,SaaS & Software
+Elena Rostova,erostova@cyber-shield.net,AI Speech Recognition Engine,16000.00,1,AI & Machine Learning
+David Kim,dkim@hyperion-ai.com,ThinkPad X1 Carbon Gen 11,2199.00,8,Hardware & Devices
+Rachel Green,rgreen@omniretail.us,Cloudflare Enterprise CDN,22000.00,1,Cloud Infrastructure
+Marcus Vance,mvance@titan-aerospace.com,Penetration Testing Package,19500.00,1,Cybersecurity
+Sophia Chen,sophia.chen@techcorp.io,24/7 Dedicated SLA Support,36000.00,1,Consulting & Services
+Chloe Bennett,chloe@quantumdata.io,Shure MV7 Podcast Microphone,249.00,18,Office & Remote Work
+Aarav Patel,aarav.p@nextgenlabs.com,Linear Enterprise License,15.00,600,SaaS & Software
+William Taylor,wtaylor@enterprisecloud.com,Gemini API Enterprise Tier,15000.00,2,AI & Machine Learning
+Olivia Brooks,olivia.b@cyberguard.net,MacBook Pro M3 Max 16-inch,3499.00,4,Hardware & Devices
+James Wilson,jwilson@logisticsplus.com,AWS EC2 Reserved Instances,45000.00,1,Cloud Infrastructure
+Emma Davis,emma.d@healthcareai.org,CrowdStrike Falcon Endpoint,85.00,400,Cybersecurity
+Benjamin Wright,bwright@fintechpulse.io,Data Strategy Workshop,12000.00,1,Consulting & Services
+Mia Anderson,mia.a@retailconnect.com,Herman Miller Aeron Chair,1399.00,6,Office & Remote Work
+Alexander White,awhite@mediahub.net,Datadog Observability Pack,18500.00,1,SaaS & Software
+Zoe Martinez,zoe.m@startupscale.com,NVIDIA H100 GPU Cluster Rent,85000.00,1,AI & Machine Learning
+Carlos Mendez,cmendez@latam-pay.mx,Dell PowerEdge R750 Server,14500.00,2,Hardware & Devices
+Fatima Al-Sayed,fal-sayed@gulf-energy.ae,GCP BigQuery Compute Pack,25000.00,1,Cloud Infrastructure
+Oliver Queen,oqueen@star-city.org,Okta SSO Enterprise Suite,12.00,1000,Cybersecurity
+Hannah Abbott,habbott@edtech-global.uk,Cloud Migration 3-Month Project,65000.00,1,Consulting & Services
+Lucas Silva,lsilva@agritech-brazil.com,Apple Studio Display 27-inch,1599.00,4,Office & Remote Work
+Nina Patel,npatel@med-device.in,Figma Enterprise Seats,45.00,250,SaaS & Software
+Thomas Anderson,tanderson@matrix-systems.com,OpenAI Custom Model Finetuning,30000.00,1,AI & Machine Learning
+Victoria Sterling,vsterling@sterling-cap.co,Cisco Catalyst 9300 Switch,6800.00,2,Hardware & Devices
+Sarah Jenkins,s.jenkins@acme-global.com,Azure Kubernetes Cluster Pro,18000.00,1,Cloud Infrastructure
+Alex Rivera,arivera@fintech-vault.io,Cloudflare Magic Transit,14000.00,1,Cybersecurity
+Dr. Priya Sharma,psharma@biohealth-labs.org,Custom Analytics Dashboard Dev,24000.00,1,Consulting & Services
+Kenji Sato,ksato@tokyo-logistics.jp,Logitech Rally Video Conferencing Kit,2999.00,3,Office & Remote Work
+Amara Okafor,amara@cloudscale-africa.co,GitHub Enterprise License,21.00,450,SaaS & Software
+Liam Thorne,lthorne@nordic-energy.se,Vector Database Cloud Dedicated,9500.00,2,AI & Machine Learning
+Elena Rostova,erostova@cyber-shield.net,Synology RackStation NAS 64TB,8200.00,1,Hardware & Devices
+David Kim,dkim@hyperion-ai.com,Snowflake Warehouse Credits,35000.00,1,Cloud Infrastructure
+Rachel Green,rgreen@omniretail.us,SOC 2 Compliance Audit Package,28000.00,1,Cybersecurity
+Marcus Vance,mvance@titan-aerospace.com,DevOps Pipeline Architecture,32000.00,1,Consulting & Services
+Sophia Chen,sophia.chen@techcorp.io,Autonomous Smart Desk Pro,899.00,10,Office & Remote Work
+Chloe Bennett,chloe@quantumdata.io,Salesforce CRM Unlimited Tier,330.00,40,SaaS & Software
+Aarav Patel,aarav.p@nextgenlabs.com,AI Speech Recognition Engine,16000.00,1,AI & Machine Learning
+William Taylor,wtaylor@enterprisecloud.com,ThinkPad X1 Carbon Gen 11,2199.00,6,Hardware & Devices

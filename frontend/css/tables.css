@@ -1,0 +1,71 @@
+/* ==========================================================================
+   AI Sales Analyst — Responsive Data Tables
+   ========================================================================== */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: var(--font-size-sm);
+}
+
+.data-table th {
+    background-color: var(--bg-surface);
+    color: var(--text-secondary);
+    font-family: var(--font-heading);
+    font-weight: var(--font-semibold);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border-color);
+    text-transform: uppercase;
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.data-table td {
+    padding: var(--space-4);
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.data-table tbody tr {
+    transition: background-color var(--transition-fast);
+}
+
+.data-table tbody tr:hover {
+    background-color: var(--bg-surface);
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+/* Sorting Header Icon */
+.th-sortable {
+    cursor: pointer;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.th-sortable:hover {
+    color: var(--text-main);
+}

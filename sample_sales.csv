@@ -1,0 +1,6 @@
+customer_name,customer_email,product_name,category,price,quantity
+John Doe,john@example.com,MacBook Pro,Electronics,2000.00,1
+Jane Smith,jane@example.com,iPhone 15,Electronics,1000.00,2
+TechCorp,admin@techcorp.com,Office Desk,Furniture,300.00,5
+TechCorp,admin@techcorp.com,Office Chair,Furniture,150.00,10
+John Doe,john@example.com,AirPods,Electronics,250.00,1

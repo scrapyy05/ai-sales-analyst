@@ -1,0 +1,35 @@
+# ==============================================================================
+# AI Sales Analyst — Git Ignore Rules (Python / FastAPI / PostgreSQL)
+# ==============================================================================
+
+# 1. Environment Variables & Secrets (CRITICAL: Never commit API keys or passwords!)
+.env
+.env.*
+*.secret
+
+# 2. Python Virtual Environment (Do not commit 300MB+ of pip libraries!)
+venv/
+env/
+ENV/
+.venv/
+
+# 3. Python Bytecode & Caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 4. Local Database Files & Logs
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# 5. OS & IDE Configuration Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
