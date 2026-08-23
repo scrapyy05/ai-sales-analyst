@@ -37,7 +37,7 @@ class RedisQueryCache:
         key = self._generate_key(prompt)
         
         # Convert our Python dictionary/list into a text JSON string
-        json_string = json.dumps(payload)
+        json_string = json.dumps(payload, default=str)
         
         # setex = Set with Expiration. Saves data and starts the 300s countdown timer!
         self.redis_client.setex(key, self.ttl, json_string)
