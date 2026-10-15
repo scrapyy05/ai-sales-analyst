@@ -39,6 +39,14 @@ app.include_router(ask.router)
 # 4. Mount Static Frontend Files (Modern SaaS UI)
 app.mount("/frontend", StaticFiles(directory="frontend", html=True), name="frontend")
 
+@app.get("/health", tags=["System"])
+def health_check():
+    return {
+        "status": "healthy",
+        "service": "AI Sales Analyst API",
+        "version": "1.0.0"
+    }
+
 @app.get("/")
 def root():
     from fastapi.responses import RedirectResponse
