@@ -5,6 +5,7 @@
 # 1. Environment Variables & Secrets (CRITICAL: Never commit API keys or passwords!)
 .env
 .env.*
+!.env.example
 *.secret
 
 # 2. Python Virtual Environment (Do not commit 300MB+ of pip libraries!)
