@@ -6,6 +6,7 @@ from app.models.user import User
 from app.schemas.user import UserCreate, UserResponse
 from app.schemas.token import Token
 from app.core import security
+from app.api.dependencies import get_current_user
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
@@ -35,3 +36,8 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
     
     access_token = security.create_access_token(data={"sub": user.email})
     return {"access_token": access_token, "token_type": "bearer"}
+
+@router.get("/me", response_model=UserResponse)
+def get_me(current_user: User = Depends(get_current_user)):
+    """Fetch profile details of the currently authenticated user."""
+    return current_user
